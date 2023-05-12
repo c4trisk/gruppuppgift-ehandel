@@ -61,11 +61,33 @@ exports.updateProduct = async (req, res) => {
 
 // Delete product
 
-exports.deleteProduct = async (req, res) => {
+// exports.deleteProduct = async (req, res) => {
 
-  const product = await Product.findByIdAndDelete(req.params.id)
+//   const product = await Product.findByIdAndDelete(req.params.id)
 
-  if(!product) res.status(404).json({ message: 'Could not find product' });
+//   if(!product) res.status(404).json({ message: 'Could not find product' });
 
-  res.status(204).json({ message: 'Product deleted' })
+//   res.status(204).json({ message: 'Product deleted' })
+// }
+
+exports.deleteProduct = (req, res) => {
+  Product.findByIdAndDelete(req.params.id)
+  .then (data => {
+      if(!data) {
+          res.status(404).json({
+              message: "Could not find product to delete"
+          })
+          return
+      }
+
+      res.status(200).json({ id: data._id})
+  })
+  .catch(err => {
+      res.status(500).json({
+          message: "Something went wrong",
+          err: err.message
+      })
+  })
+
+
 }
