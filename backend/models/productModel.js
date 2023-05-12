@@ -7,10 +7,10 @@ exports.addProduct = async (req, res) => {
 
   const { name, description, price, imageURL } = req.body;
 
-  if(!name) res.staus(400).json({ message: 'You need to give the product a name' });
-  if(!description) res.staus(400).json({ message: 'You need to give the product a description' });
-  if(!price) res.staus(400).json({ message: 'You need to give the product a price' });
-  if(!imageURL) res.staus(400).json({ message: 'You need to give the product a imageURL' });
+  if(!name) res.status(400).json({ message: 'You need to give the product a name' });
+  if(!description) res.status(400).json({ message: 'You need to give the product a description' });
+  if(!price) res.status(400).json({ message: 'You need to give the product a price' });
+  if(!imageURL) res.status(400).json({ message: 'You need to give the product a imageURL' });
 
   const product = await Product.create({ name, description, price, imageURL });
 
