@@ -8,7 +8,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const response = await fetch('http://localhost:9999/api/products/645e1dd0ebd7d18d50865564');
+        const response = await fetch('http://localhost:9999/api/products/645e1b2cebd7d18d50865558');
         const data = await response.json();
         setProduct(data);
       } catch (error) {
