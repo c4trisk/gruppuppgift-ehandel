@@ -6,6 +6,8 @@ import Contact from "./pages/Contact"
 import Login from "./pages/Login"
 import Registration from "./pages/Registration"
 import ProductDetails from "./pages/ProductDetails"
+import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 const App = () => {
 
@@ -26,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-        {/* Navbar */}
+        <Nav />
         <Routes>
             <Route path="/" element= { <Home/>}/>
             <Route path="/products" element= { <Products />}/>
@@ -35,6 +37,7 @@ const App = () => {
             <Route path="/login" element= { <Login/>}/>
             <Route path="/registration" element= { <Registration/>}/>
         </Routes>
+        <Footer />
     </div>
   )
 }
