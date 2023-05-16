@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     min-height: 100vh;
     position: relative;
@@ -286,6 +287,58 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 3rem;
+}
+
+/* HeroHome */
+.HeroHomepage{
+    background-color: #F3F2F2;
+
+}
+
+.HeroHomepage .hero-container{
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.HeroHomepage .hero-img{
+    height: 550px ;
+    width: 525px ;
+    object-fit: cover;
+}
+
+.HeroHomepage .cta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.HeroHomepage .hero-welcome{
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #292929;
+}
+
+.HeroHomepage h2{
+    color: #292929;
+    font-size: 3.5rem;
+    width: 70%;
+}
+
+.HeroHomepage button{
+    background-color: #FA3150;
+    color: white;
+    text-transform: uppercase;
+    width: 180px;
+    border: none;
+    padding-top: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
 }
 
 

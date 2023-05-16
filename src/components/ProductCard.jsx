@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom'
 const ProductCard = ({ product }) => {
 
-  console.log(product._id)
   return (
 
     <NavLink to={`/products/${product._id}` }>
