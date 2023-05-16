@@ -27,7 +27,6 @@ const useFetch = (url) => {
             //set error back to null incase it has been error before
             setError(null)
 
-            console.log(data)
         })
         .catch(err => {
             if(err.name === 'AbortError'){

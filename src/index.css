@@ -202,3 +202,44 @@
  display: flex;
  align-items: center;
 }
+
+
+/* PRODUCT CARD */
+
+.ProductCards-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.ProductCard-img{
+   width: 270px;
+   height: 290px;
+   object-fit: cover;
+}
+
+.ProductCard, a:link {
+    text-decoration: none; 
+    color: black;
+    list-style-type: none;
+}
+
+.ProductCard .productName{
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-top: 1rem;
+}
+
+.ProductCard .productPrice{
+    font-size: 1rem;
+    color: grey;
+}
+
+.Products .productsTitle{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
