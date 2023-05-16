@@ -4,6 +4,50 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* -------Navbar------------- */
+
+.Navbar {
+    background-color: #fff;
+    padding-block: 1rem;
+    font-size: .8em;
+}
+
+.Navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.Navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Navbar .nav-link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.Navbar .nav-link:hover {
+    color: #e0183a;
+}
+
+
+.Navbar .nav-link-grey {
+    color: #b4b4b4;
+    text-transform: capitalize;
+}
+
+
 
 
 /* PRODUCT DETAILS */
@@ -243,3 +287,19 @@
     margin-bottom: 2rem;
     font-size: 3rem;
 }
+
+
+/* -------Footer------------- */
+
+.Footer {
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    margin-top: 1rem;
+    background-color: #333;
+    font-size: .8em;
+    color: #dbdbdb;
+    display: grid;
+    place-items: center;
+  }
