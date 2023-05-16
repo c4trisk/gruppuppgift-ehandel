@@ -4,13 +4,16 @@ import { FaStar } from 'react-icons/fa';
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import useFetch from '../components/useFetch'
 import { useParams } from 'react-router-dom';
+import ProductCard from '../components/ProductCard';
 
 
 
 const ProductDetails = () => {
   const { id } = useParams()
 
-  const { data: product} = useFetch('http://localhost:9999/api/products/' + id)
+  const { data: product } = useFetch('http://localhost:9999/api/products/' + id)
+
+  const { data: products } = useFetch('http://localhost:9999/api/products/')
 
   console.log(product)
 
@@ -47,7 +50,7 @@ const ProductDetails = () => {
 
       <div className='product-detail-top'>
 
-        <img src={product.imageURL} alt="" width={501} height={430}/>
+        <img src={product.imageURL} alt="" width={501} height={430} />
 
         <div className='product-description'>
 
@@ -108,11 +111,28 @@ const ProductDetails = () => {
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sunt optio sed quis impedit est dignissimos at similique mollitia maiores provident modi iste consectetur quia sint. Rem ea vitae facilis ut quae unde vel consequatur. Totam placeat, excepturi ducimus et ipsa nostrum in reiciendis ex magni, rerum adipisci atque neque.</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quis natus velit perspiciatis inventore corporis consequatur magni exercitationem alias eos labore aliquam illo quia suscipit minus ad totam voluptatibus, ex doloribus impedit voluptatum odit! Consequuntur, debitis a. Delectus, nisi quidem.</p>
             </div>
-            <img src={product.imageURL} alt="" width={469} height={356}/>
+            <img src={product.imageURL} alt="" width={469} height={356} />
           </div>
+
         </div>
+         
+         <hr />
+
+         <h4 className='rp-h4'>Related Products</h4>
+        <section className='recent-products'>
+          
+          {products && products.slice(0, 4).map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </section>
+       
+        
+       
+
+
 
       </div>
+
     </div>
   )
 }
