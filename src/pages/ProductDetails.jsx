@@ -15,6 +15,8 @@ const ProductDetails = () => {
 
   const { data: products } = useFetch('http://localhost:9999/api/products/')
 
+  console.log(product)
+
 
 
 
