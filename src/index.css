@@ -214,6 +214,7 @@ body {
     border: 1px solid #DDDDDD;
     cursor: pointer;
     width: 270px;
+
 }
 
 .product-details .nav-tabs .nav-link:hover {
@@ -246,7 +247,21 @@ body {
 .product-details .tab-row{
  display: flex;
  align-items: center;
+ margin-bottom: 70px;
 }
+
+.product-details .rp-h4{
+margin-top: 30px;
+}
+
+.product-details .recent-products{
+    display: flex;
+    gap: 25px;
+    margin-top: 70px;
+    
+   
+}
+
 
 
 /* PRODUCT CARD */
