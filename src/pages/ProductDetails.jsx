@@ -1,16 +1,13 @@
 import React from 'react'
 import heroBanner from '../assets/Placeholders/1920x300.svg'
-import productItem from '../assets/Placeholders/501x430.svg'
-import productContent from '../assets/Placeholders/469x356.svg'
 import { FaStar } from 'react-icons/fa';
 import { useContext } from 'react'
 import { ProductContext } from '../components/ProductContext';
-
-
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 
 const ProductDetails = () => {
+
   const product = useContext(ProductContext);
 
 
@@ -105,7 +102,7 @@ const ProductDetails = () => {
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, sunt optio sed quis impedit est dignissimos at similique mollitia maiores provident modi iste consectetur quia sint. Rem ea vitae facilis ut quae unde vel consequatur. Totam placeat, excepturi ducimus et ipsa nostrum in reiciendis ex magni, rerum adipisci atque neque.</p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quis natus velit perspiciatis inventore corporis consequatur magni exercitationem alias eos labore aliquam illo quia suscipit minus ad totam voluptatibus, ex doloribus impedit voluptatum odit! Consequuntur, debitis a. Delectus, nisi quidem.</p>
             </div>
-            <img src={productContent} alt="" />
+            <img src={product.imageURL} alt="" width={469} height={356}/>
           </div>
         </div>
 
