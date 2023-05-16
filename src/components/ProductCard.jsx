@@ -1,11 +1,16 @@
-import React from 'react'
-
+import { NavLink } from 'react-router-dom'
 const ProductCard = ({ product }) => {
+
+  console.log(product._id)
   return (
-    <div className='ProductCard'>
-      <h2>{product.name}</h2>
-      <p>{"$" + product.price}</p>
-    </div>
+
+    <NavLink to={`/products/${product._id}` }>
+    <li className='ProductCard'>
+      <img src={product.imageURL} alt={product.name} className='ProductCard-img' />
+      <h2 className='productName'>{product.name}</h2>
+      <p className='productPrice'>{"$" + product.price}</p>
+    </li>
+     </NavLink>
   )
 }
 
