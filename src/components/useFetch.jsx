@@ -9,7 +9,9 @@ const useFetch = (url) => {
   
     useEffect(() => {
 
-        fetch(url)
+        const abortCont = new AbortController();
+
+        fetch(url, { signal: abortCont.signal })
         .then ( res => {
             if(!res.ok){
                 throw Error('Could not fetch the data')
@@ -28,10 +30,19 @@ const useFetch = (url) => {
             console.log(data)
         })
         .catch(err => {
+            if(error.name === 'AbortError'){
+                console.log('fetch aborted')
+            }
+            else{
             //since there is an error in retrieving from db loadin is false
             setIsLoading(false)
             setError(err.message)
+            }
+            
         })
+
+        //if the fetch is aborted here we catch the error in the if statement above.
+        return () => abortCont.abort();
 
         //every time the url updates, useEffect runs
 
