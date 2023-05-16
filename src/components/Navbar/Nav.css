@@ -1,0 +1,38 @@
+/* -------Navbar------------- */
+
+.Navbar {
+    background-color: #fff;
+    padding-block: 1rem;
+    font-size: .8em;
+}
+
+.Navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.Navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.Navbar .nav-link {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.Navbar .nav-link:hover {
+    color: #e0183a;
+}
+
+
+.Navbar .nav-link-grey {
+    color: #b4b4b4;
+    text-transform: capitalize;
+}
+

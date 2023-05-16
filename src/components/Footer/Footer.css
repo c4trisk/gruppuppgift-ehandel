@@ -1,0 +1,13 @@
+/* -------Footer------------- */
+
+.Footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #333;
+  padding: 1.7rem;
+  font-size: .8em;
+  color: #dbdbdb;
+  display: grid;
+  place-items: center;
+}
