@@ -3,12 +3,16 @@ import heroBanner from '../assets/Placeholders/1920x300.svg'
 import { FaStar } from 'react-icons/fa';
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import useFetch from '../components/useFetch'
+import { useParams } from 'react-router-dom';
+
 
 
 const ProductDetails = () => {
+  const { id } = useParams()
 
 
-  const { data: product} = useFetch('http://localhost:9999/api/products/645e20cb4dcb1354d3c86311')
+  // const { data: product} = useFetch('http://localhost:9999/api/products/645e20cb4dcb1354d3c86311')
+  const { data: product} = useFetch('http://localhost:9999/api/products/' + id)
 
 
 
