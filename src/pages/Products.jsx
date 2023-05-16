@@ -1,37 +1,20 @@
-import { useState, useEffect} from 'react'
 import ProductCard from '../components/ProductCard'
+import useFetch from '../components/useFetch'
 
 const Products = () => {
 
-  
-  const [products, setProducts] = useState([])
-
-  useEffect(() => {
-
-    const getProducts = async () => {
-      const res = await fetch('http://localhost:9999/api/products')
-      const data = await res.json()
-      console.log(data)
-      setProducts(data)
-    }
-
-    getProducts()
-    // console.log(products)
-  }, [])
-
+  const { data: products, isLoading, error } = useFetch('http://localhost:9999/api/products')
 
   return (
     <div>
       <ul>
-      { products.map(product => (
+        {isLoading && <p>Loading...</p>}
+        {error && <h2>{ error }</h2>}
+      { products && products.map(product => (
             <ProductCard key={product._id} product={product} />
           )) }
 
       </ul>
-      <h1>hello</h1>
-      {
-        products.length > 1 ? <p>Products finns!</p> : <p>nej</p>
-      }
     </div>
   )
 }
