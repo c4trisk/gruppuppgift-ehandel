@@ -10,8 +10,6 @@ import { useParams } from 'react-router-dom';
 const ProductDetails = () => {
   const { id } = useParams()
 
-
-  // const { data: product} = useFetch('http://localhost:9999/api/products/645e20cb4dcb1354d3c86311')
   const { data: product} = useFetch('http://localhost:9999/api/products/' + id)
 
 
