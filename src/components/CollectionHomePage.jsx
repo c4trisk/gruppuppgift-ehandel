@@ -8,7 +8,7 @@ const CollectionHomePage = () => {
 
     const { data: products } = useFetch('http://localhost:9999/api/products/')
 
-    const [loadProducts, setLoadProducts] = useState(8)
+    const [loadProducts, setLoadProducts] = useState(6)
 
     const loadMore = () => {
         setLoadProducts(loadProducts + loadProducts)
