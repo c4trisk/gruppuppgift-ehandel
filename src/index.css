@@ -433,6 +433,7 @@ margin-top: 30px;
     position: relative;
     display: flex;
     justify-content: center;
+    align-content: center;
 }
 
 .Subscribe .subscribe-wrapper{
@@ -447,28 +448,37 @@ margin-top: 30px;
     display: flex;
     height:100%;
     align-items: center;
+    justify-content: center;
     width: 75%;
     margin: 0 auto;
+    position: relative;
+    left: 2rem;
+  
+  
 }
 
 .Subscribe input{
+   height: 50px;
     flex:2;
     padding: 1rem 2rem;
-    border-radius: 1rem 0rem 0rem 1rem;
+    border-radius: 30px;
     border-right: none;
     outline: none;
-    border-color: rgb(176, 175, 175);
+    border: 1px solid rgb(176, 175, 175);
 }
 .Subscribe button{
+    height: 50px;
     flex:1;
-    padding: 1.2rem 2rem;
-    border-radius: 1rem;
+    border-radius: 30px;
     background-color: #FA3150;
     color: white;
-    text-transform: uppercase;
     border: none;
     font-size: .9rem;
     cursor: pointer;
+    text-align: center;
+    position: relative;
+    right: 5rem;
+   
 }
 .Subscribe button:hover{
     background-color: hsl(351, 95%, 69%);
