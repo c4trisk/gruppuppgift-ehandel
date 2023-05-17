@@ -356,6 +356,140 @@ margin-top: 30px;
     cursor: pointer;
 }
 
+
+
+
+/*----------Sale component ----------- */
+
+.SaleHomepage {
+    background-color: rgb(243, 231, 233);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.SaleHomepage .container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-block: 4rem;
+
+}
+
+/*----------Sale component ----------- */
+.SizedProductCard {
+    width: 369px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 1px  #00000009;
+}
+
+.SizedProductCard .product-details {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.SizedProductCard img {
+    object-fit: cover;
+}
+.SizedProductCard .product-name {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.SizedProductCard .d-flex-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.SizedProductCard .product-details p, 
+.SizedProductCard .product-details span {
+    color:rgb(176, 175, 175);
+}
+
+.SizedProductCard .original-price {
+    text-decoration: line-through;
+    flex: 1;
+}
+.SizedProductCard .product-price {
+    flex: 1;    
+}
+.SizedProductCard .icon {
+    flex: 2;
+    text-align: right;
+}
+
+/*----------Text Card component ----------- */
+
+.TextCard {
+    width: 369px;
+    height: 400px;
+    background-color: #fff;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 1px  #00000009;
+
+}
+
+.TextCard .red-text {
+    color: #e0183a;
+    font-weight: 600;
+}
+.TextCard h2 {
+    font-size: 2.6em;
+}
+.TextCard h3 {
+    font-size: 1.5em;
+}
+.TextCard .body {
+    line-height: 1.4em;
+    font-size: 1em;
+}
+
+
+/*---------------Top of the week Homepage -----------*/
+.TopHomepage {
+    background-color: #fff;
+    padding: 4rem;
+}
+
+.TopHomepage .container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.TopHomepage .headline {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.TopHomepage .pop-container {
+    width: 960px;
+    border: 2px solid salmon;
+}
+
+.TopHomepage .slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.TopHomepage .slide-item {
+    height: 385px;
+    width: 270px;
+    background-color: yellow;
+}
+
 /* Subscribe component */
 
 .Subscribe{
