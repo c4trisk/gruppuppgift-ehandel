@@ -405,7 +405,69 @@ margin-top: 30px;
     background-color: hsl(351, 95%, 69%);
 }
 
+/* Login */
+.login-wrapper{
+    height: 100vh;
+    background-color: #d0d0d0;
+    display: grid;
+    place-items: center;
+}
+.login-card {
+    background-color: #F3F2F2;
+    border: 1px solid #b4b4b4;
+    border-radius: 1rem;
+    width: 800px;
+    padding: 2.5rem;
+}
 
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.login-headline {
+    padding-bottom: 2em;
+}
+
+.form-control,
+.form-label {
+    display: block;
+    width: 100%;
+}
+
+.form-label {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    padding: 1em;
+    font-size: 1rem;
+    border: 1px solid #000;
+}
+.form-control:focus {
+    outline-color: #e0183a;
+}
+
+.error, #checkbox, .checkbox-label {
+    margin: .9em .1em;
+}
+
+.error {
+    color: firebrick;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.login-btn {
+    padding: 1em 3em;
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: #e0183a;
+    color: #DDDDDD;
+    display: block;
+}
 
 /* -------Footer------------- */
 
