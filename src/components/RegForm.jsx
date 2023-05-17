@@ -48,7 +48,7 @@ const RegForm = () => {
     id="profile-img"
     type="text"
     label="Profile-img"/>
-    <input type="checkbox" id='checkbox'/> 
+    <input type="checkbox" id='reg-checkbox'/> 
     <label className='checkbox-label' htmlFor="checkbox">i have read and accept terms and agreements</label>
     <button className='login-btn'>Submit</button>
     </form>

@@ -405,7 +405,9 @@ margin-top: 30px;
     background-color: hsl(351, 95%, 69%);
 }
 
-/* Login */
+/* -------Login------------- */
+
+
 .login-wrapper{
     height: 100vh;
     background-color: #d0d0d0;
@@ -447,14 +449,21 @@ margin-top: 30px;
     outline-color: #e0183a;
 }
 
-.error, #checkbox, .checkbox-label {
-    margin: .9em .1em;
+
+.checkbox-login{
+    /* display: inline; */
+    margin: 0em 1.9em 2em 0.4em;
+}
+.checkbox-label {
+    margin-left: .7em;
+    text-transform: capitalize;
 }
 
 .error {
     color: firebrick;
     font-size: 1rem;
     font-weight: 500;
+    margin: .9em .1em;
 }
 
 .login-btn {
@@ -472,12 +481,15 @@ margin-top: 30px;
 /* -------Registration------------- */
 
 .reg-wrapper{
-    height: 100vh;
     background-color: #d0d0d0;
     display: grid;
     place-items: center;
+    align-items: end;
 }
 .reg-card {
+    /* height: 100%; */
+    margin-top: 4rem;
+    margin-bottom: 7rem;
     background-color: #F3F2F2;
     border: 1px solid #b4b4b4;
     border-radius: 1rem;
@@ -514,8 +526,8 @@ margin-top: 30px;
 #postalcode,
 #city,
 #mobile{
-    width: 90%;
-    padding: 0.7em 5rem;
+    width: 20em;
+    margin-right: 2.2em
 }
 
 #email,
@@ -523,13 +535,13 @@ margin-top: 30px;
 #confirm-pswrd,
 #profile-img,
 #street{
-    width: 100%;
-    padding: 0.8em 15rem;
+    width: 42em;
+    /* padding: 0.8em 15rem; */
 }
 
-/* .form-label {
-    margin-bottom: 1rem;
-} */
+#reg-checkbox{
+    margin: 0em 2em 2em 1em;
+}
 
 
 

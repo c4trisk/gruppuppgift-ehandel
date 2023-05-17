@@ -14,8 +14,10 @@ const Form = () => {
     id="password"
     type="password"
     label="password"/>
+    <div className="checkbox-login">
     <input type="checkbox" id='checkbox'/> 
     <label className='checkbox-label' htmlFor="checkbox">please keep me logged in</label>
+    </div>
     <button className='login-btn'>Submit</button>
     </form>
   )
