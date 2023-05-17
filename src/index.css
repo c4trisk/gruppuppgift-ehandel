@@ -213,7 +213,7 @@ body {
     padding: 20px;
     border: 1px solid #DDDDDD;
     cursor: pointer;
-    width: 270px;
+    width: 300px;
 
 }
 
@@ -356,6 +356,73 @@ margin-top: 30px;
     cursor: pointer;
 }
 
+/* Home-collection component */
+ 
+.product-collection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    width: 70%; 
+ } 
+  
+
+.product-collection .row .nav-tabs{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 40px;
+    font-size: 1rem;
+}
+.product-collection .row .nav-tabs li{
+   list-style: none;
+ }
+.product-collection .row .nav-tabs a{
+   color: #000;
+ }
+.product-collection .nav-link{
+  margin: 5px;
+ }
+.product-collection .h2-collection{
+   text-align: center;
+   padding-bottom: 40px;
+    
+}
+
+.product-collection section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.load-more{
+
+    text-align: center;
+}
+.load-more .load-btn{
+    margin-top: 50px;
+    padding: 13px 30px;
+    border: 1px solid black;
+    color: black;
+    font-size: 15px;
+    background-color: #FFF;
+    cursor: pointer;
+}
+
+.load-more .load-btn:hover{
+    background-color: #e0183a;
+    color: #ECEBEB;
+    border: 1px solid #e0183a
+}
+
+.load-more .load-icon{
+    margin-left: 10px;
+    font-size: 17px;
+    position: relative;
+    top:2px;
+  }
+
+
+
 
 
 
@@ -489,6 +556,8 @@ margin-top: 30px;
     width: 270px;
     background-color: yellow;
 }
+
+
 
 /* Subscribe component */
 
