@@ -9,11 +9,11 @@ const Form = () => {
     <FormInput
     id="email"
     type="email"
-    label="email"/>
+    label="Email*"/>
     <FormInput
     id="password"
     type="password"
-    label="password"/>
+    label="Password*"/>
     <div className="checkbox-login">
     <input type="checkbox" id='checkbox'/> 
     <label className='checkbox-label' htmlFor="checkbox">please keep me logged in</label>

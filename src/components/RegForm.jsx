@@ -7,47 +7,47 @@ const RegForm = () => {
     <FormInput
     id="firstName"
     type="text"
-    label="First Name"/>
+    label="First Name*"/>
     <FormInput
     id="lastName"
     type="text"
-    label="Last Name"/>
+    label="Last Name*"/>
     <FormInput
     id="street"
     type="text"
-    label="Street Name"/>
+    label="Street Name*"/>
     <FormInput
     id="postalcode"
     type="number"
-    label="Postal Code"/>
+    label="Postal Code*"/>
     <FormInput
     id="city"
     type="text"
-    label="City"/>
+    label="City*"/>
     <FormInput
     id="mobile"
     type="number"
-    label="Mobile"/>
+    label="Mobile (optional)"/>
     <FormInput
     id="company"
     type="text"
-    label="Company"/>
+    label="Company (optional)"/>
     <FormInput
     id="email"
     type="email"
-    label="email adress"/>
+    label="Email*"/>
     <FormInput
     id="password"
     type="password"
-    label="password"/>
+    label="Password*"/>
     <FormInput
     id="confirm-pswrd"
     type="password"
-    label="confirm-pswrd"/>
+    label="Confirm Password*"/>
     <FormInput
     id="profile-img"
     type="text"
-    label="Profile-img"/>
+    label="Upload Profile Image (optional)"/>
     <input type="checkbox" id='reg-checkbox'/> 
     <label className='checkbox-label' htmlFor="checkbox">i have read and accept terms and agreements</label>
     <button className='login-btn'>Submit</button>
