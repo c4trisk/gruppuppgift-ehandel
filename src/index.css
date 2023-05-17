@@ -440,7 +440,10 @@ margin-top: 30px;
     gap: 2rem;
     justify-content: space-between;
     padding-block: 4rem;
+}
 
+.SaleHomepage .SizedProductCard .icon {
+    color: rgb(176, 175, 175);
 }
 
 /*----------Sale component ----------- */
@@ -473,14 +476,14 @@ margin-top: 30px;
     align-items: flex-end;
 }
 
-.SizedProductCard .product-details p, 
-.SizedProductCard .product-details span {
+.SizedProductCard .product-details p {
     color:rgb(176, 175, 175);
 }
 
 .SizedProductCard .original-price {
     text-decoration: line-through;
     flex: 1;
+    margin-right: .5rem;
 }
 .SizedProductCard .product-price {
     flex: 1;    
@@ -488,6 +491,7 @@ margin-top: 30px;
 .SizedProductCard .icon {
     flex: 2;
     text-align: right;
+    color: transparent;
 }
 
 /*----------Text Card component ----------- */
@@ -526,6 +530,10 @@ margin-top: 30px;
 .TopHomepage {
     background-color: #fff;
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem
 }
 
 .TopHomepage .container {
@@ -533,29 +541,20 @@ margin-top: 30px;
     gap: 1.5rem;
 }
 
-.TopHomepage .headline {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.TopHomepage .pop-container {
-    width: 960px;
-    border: 2px solid salmon;
-}
-
-.TopHomepage .slide {
+.TopHomepage .buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 1rem;
-    overflow-x: auto;
+}
+.TopHomepage .btn {
+    background-color: #fff;
+    padding: .8rem 1rem;
+    font-size: 1em;
+    font-weight: 700;
+    border: 1px solid #000;
+    border-radius: .4em;
 }
 
-.TopHomepage .slide-item {
-    height: 385px;
-    width: 270px;
-    background-color: yellow;
-}
+
 
 
 
