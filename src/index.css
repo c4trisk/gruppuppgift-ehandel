@@ -617,6 +617,153 @@ margin-top: 30px;
     background-color: hsl(351, 95%, 69%);
 }
 
+/* -------Login------------- */
+
+
+.login-wrapper{
+    height: 100vh;
+    background-color: #d0d0d0;
+    display: grid;
+    place-items: center;
+}
+.login-card {
+    background-color: #F3F2F2;
+    border: 1px solid #b4b4b4;
+    border-radius: 1rem;
+    width: 800px;
+    padding: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.login-headline {
+    padding-bottom: 2em;
+}
+
+.form-control,
+.form-label {
+    display: block;
+    width: 100%;
+}
+
+.form-label {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    padding: 1em;
+    font-size: 1rem;
+    border: 1px solid #000;
+}
+.form-control:focus {
+    outline-color: #e0183a;
+}
+
+
+.checkbox-login{
+    /* display: inline; */
+    margin: 0em 1.9em 2em 0.4em;
+}
+.checkbox-label {
+    margin-left: .7em;
+    text-transform: capitalize;
+}
+
+.error {
+    color: firebrick;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: .9em .1em;
+}
+
+.login-btn {
+    padding: 1em 3em;
+    font-size: .9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background-color: #e0183a;
+    color: #DDDDDD;
+    display: block;
+}
+
+/* -------Registration------------- */
+
+.reg-wrapper{
+    background-color: #d0d0d0;
+    display: grid;
+    place-items: center;
+    align-items: end;
+}
+.reg-card {
+    /* height: 100%; */
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+    background-color: #F3F2F2;
+    border: 1px solid #b4b4b4;
+    border-radius: 1rem;
+    width: 800px;
+    padding: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    /* margin: 0em 4em; */
+
+}
+
+.reg-headline {
+    padding-bottom: 2em;
+}
+
+.reg-control,
+.reg-label {
+    /* width: 50%; */
+    /* display: inline-block; */
+    display:flex;
+    
+}
+
+#firstName,
+#lastName,
+#company,
+#postalcode,
+#city,
+#mobile{
+    width: 20em;
+    margin-right: 2.2em
+}
+
+#email,
+#password,
+#confirm-pswrd,
+#profile-img,
+#street{
+    width: 42em;
+    /* padding: 0.8em 15rem; */
+}
+
+#reg-checkbox{
+    margin: 0em 2em 2em 1em;
+}
+
+
+
+.error {
+    color: firebrick;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0.5em;
+}
+
 
 
 /* -------Footer------------- */

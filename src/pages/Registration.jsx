@@ -1,8 +1,14 @@
 import React from 'react'
+import RegForm from '../components/RegForm'
 
 const Registration = () => {
   return (
-    <div>Registration</div>
+    <div className='reg-wrapper'>
+    <div className='reg-card'>
+    <p className='reg-headline'>Register an account</p>
+      <RegForm />
+    </div>
+    </div>
   )
 }
 
