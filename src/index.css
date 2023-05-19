@@ -641,7 +641,7 @@ margin-top: 30px;
 
 .password-link{
     margin: 0em 0em 2em 5em;
-    margin: 40px 0px 90px 0px;
+    /* margin: 40px 0px 90px 0px; */
 }
 
 .form-group {
@@ -761,6 +761,7 @@ margin-top: 30px;
 }
 #contact-checkbox{
     margin-bottom: 25px;
+    margin-left: 75px;
 }
 
 
@@ -768,6 +769,7 @@ margin-top: 30px;
 display: flex;
 flex-direction: column;
 margin-bottom: 20px;
+margin-left: 80px;
 }
 .contact-textarea label{
 margin-bottom: 15px;
@@ -847,6 +849,7 @@ margin-bottom: 15px;
     width: 47em;
     height: 6em;
 }
+
 
 /* -------Footer------------- */
 
