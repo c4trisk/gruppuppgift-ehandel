@@ -804,3 +804,19 @@ margin-bottom: 15px;
     display: grid;
     place-items: center;
   }
+
+        /* MAP  */
+
+  .MapContainer .styleDiv{
+    white-space: nowrap; 
+    text-align: center; 
+    width: 500px; 
+    padding: 6px 0;
+  }
+
+  .MapContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+  }
