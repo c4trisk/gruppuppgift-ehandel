@@ -621,17 +621,17 @@ margin-top: 30px;
 
 
 .login-wrapper{
-    height: 100vh;
-    background-color: #d0d0d0;
     display: grid;
     place-items: center;
+    
 }
 .login-card {
-    background-color: #F3F2F2;
+    background-color: #f8f8f8;
     border: 1px solid #b4b4b4;
-    border-radius: 1rem;
+    border-radius: .6rem;
     width: 800px;
     padding: 2.5rem;
+    margin: 40px 0px 90px 0px;
 }
 
 .form-group {
@@ -693,7 +693,6 @@ margin-top: 30px;
 /* -------Registration------------- */
 
 .reg-wrapper{
-    background-color: #d0d0d0;
     display: grid;
     place-items: center;
     align-items: end;
@@ -702,9 +701,9 @@ margin-top: 30px;
     /* height: 100%; */
     margin-top: 4rem;
     margin-bottom: 7rem;
-    background-color: #F3F2F2;
+    background-color: #f8f8f8;
     border: 1px solid #b4b4b4;
-    border-radius: 1rem;
+    border-radius: .6rem;
     width: 800px;
     padding: 2.5rem;
 }
@@ -732,6 +731,8 @@ margin-top: 30px;
     
 }
 
+#contact-company,
+#contact-email,
 #firstName,
 #lastName,
 #company,
@@ -741,6 +742,29 @@ margin-top: 30px;
     width: 20em;
     margin-right: 2.2em
 }
+
+#textarea{
+    width: 50em;
+}
+#contact-checkbox{
+    margin-bottom: 25px;
+}
+
+
+.contact-textarea{
+display: flex;
+flex-direction: column;
+margin-bottom: 20px;
+}
+.contact-textarea label{
+margin-bottom: 15px;
+}
+
+.checkbox-label{
+    margin-left: 20px;
+}
+
+
 
 #email,
 #password,
