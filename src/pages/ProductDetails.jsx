@@ -1,10 +1,10 @@
 import React from 'react'
 import heroBanner from '../assets/Placeholders/1920x300.svg'
-import { FaStar } from 'react-icons/fa';
-import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { FaStar } from 'react-icons/fa'
+import { MdOutlineAddShoppingCart } from "react-icons/md"
 import useFetch from '../components/useFetch'
-import { useParams } from 'react-router-dom';
-import ProductCard from '../components/ProductCard';
+import { useParams } from 'react-router-dom'
+import ProductCard from '../components/ProductCard'
 
 
 
