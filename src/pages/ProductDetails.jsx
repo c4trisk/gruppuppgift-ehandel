@@ -5,6 +5,8 @@ import { MdOutlineAddShoppingCart } from "react-icons/md"
 import useFetch from '../components/useFetch'
 import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../store/features/shoppingCart/shoppingCartSlice'
 
 
 
@@ -15,9 +17,9 @@ const ProductDetails = () => {
 
   const { data: products } = useFetch('http://localhost:9999/api/products/')
 
-  console.log(product)
+  // console.log(product)
 
-
+  const dispatch = useDispatch()
 
 
   const renderStarRating = () => {
@@ -67,14 +69,14 @@ const ProductDetails = () => {
 
           <div className='price'>{'$' + product.price}</div>
 
-          <form className='quantity-form'>
+          <form className='quantity-form' onSubmit={e => e.preventDefault()}>
 
             <div>
               <input type="button" value="-" className='minus' />
               <input type="number" className='qty-text' value={1} />
               <input type="button" value="+" className='plus' />
             </div>
-            <button type='submit' className='addTo-cart-btn'>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
+            <button type='submit' className='addTo-cart-btn' onClick={() => {dispatch(addToCart(product))}}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
           </form>
 
           <ul className='color-variation'>
