@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import ShoppingCart from './ShoppingCart/ShoppingCart';
+import { useSelector } from 'react-redux';
 
 const Nav = () => {
 
@@ -9,6 +11,10 @@ const Nav = () => {
   // för isLoggedIn, Lämnar så här tills vidare
 
   const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [showCart, setShowCart] = useState(false)
+
+  const { totalQuantity } = useSelector(state => state.shoppingCart)
+
 
   return (
     <div className='Navbar'>
@@ -39,7 +45,15 @@ const Nav = () => {
           )
           }
           <li><NavLink to='/login' className='nav-link nav-link-grey'>Login</NavLink></li>
-          <li><NavLink to='/' className='nav-link nav-link-grey'><FaShoppingCart /></NavLink></li>
+          <li>
+            <span className='nav-link nav-link-grey' onClick={() => setShowCart(showCart => !showCart)}>
+              <FaShoppingCart />
+              <span className='cart-quantity'>{totalQuantity}</span>
+            </span>
+            <div className={`shoppingCart-dropdown ${showCart && 'show'}`}>
+              <ShoppingCart />
+            </div>
+          </li>
         </ul>
       </div>
     </div>

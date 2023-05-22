@@ -1,11 +1,12 @@
 import React from 'react'
 import heroBanner from '../assets/Placeholders/1920x300.svg'
 import FormInput from '../components/FormInput'
+import Map from '../components/Map'
 
 
 const Contact = () => {
   return (
-    <div>
+    <div className='ContactContainer'>
     <img src={heroBanner} />
     <div className='login-wrapper'>
     <div className='login-card'>
@@ -29,7 +30,7 @@ const Contact = () => {
           label="Company (optional)" />
 
         <div className='contact-textarea'>
-          <label>Write Somethig*</label>
+          <label>Write Something*</label>
           <textarea name="" id="textarea" cols="30" rows="10"></textarea>
         </div>
 
@@ -44,6 +45,7 @@ const Contact = () => {
     
     </div>
     </div>
+    <Map/>
     </div>
   )
 }
