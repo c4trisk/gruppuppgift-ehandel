@@ -2,6 +2,7 @@ import React from 'react'
 import heroBanner from '../assets/Placeholders/1920x300.svg'
 import FormInput from '../components/FormInput'
 
+
 const Contact = () => {
   return (
     <div>
@@ -39,6 +40,8 @@ const Contact = () => {
 
         <button className='login-btn'>Submit</button>
       </form>
+
+    
     </div>
     </div>
     </div>
