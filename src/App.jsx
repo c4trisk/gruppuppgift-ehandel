@@ -8,6 +8,7 @@ import ProductDetails from "./pages/ProductDetails"
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Checkout from './pages/Checkout'
+import UserProfile from './pages/UserProfile'
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/login" element= { <Login/>}/>
             <Route path="/registration" element= { <Registration/>}/>
             <Route path='/checkout' element={<Checkout />} />
+            <Route path='/user' element={<UserProfile />} />
         </Routes>
         <Footer />
     </div>
