@@ -4,10 +4,11 @@ import ProductCard from './ProductCard'
 import SizedProductCard from './SizedProductCard'
 import TextCard from './TextCard'
 
-const SaleHomepage = () => {
+const SaleHomepage = ({ products }) => {
 
-  const { data: product } = useFetch('http://localhost:9999/api/products/645e1ddb29613d90413b7b9f')
-  const { data: product2 } = useFetch('http://localhost:9999/api/products/645e1a664dcb1354d3c86307')
+  const _products = products.slice(0,2)
+  const product = _products[0]
+  const product2 = _products[1]
 
   return (
     <div className='SaleHomepage'>
@@ -19,6 +20,16 @@ const SaleHomepage = () => {
         {
           product2 && <SizedProductCard key={product2._id} product={product2} width={'369px'} height={'310px'} />
         }
+
+        {/* {
+          _products &&    (
+            <>
+              <SizedProductCard key={_products[0]._id} product={_products[0]} width={'369px'} height={'310px'} />
+              <TextCard />
+              <SizedProductCard key={_products[1]._id} product={_products[1]} width={'369px'} height={'310px'} />
+            </>    
+          )
+        } */}
 
       </div>
     </div>
