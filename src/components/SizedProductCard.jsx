@@ -3,6 +3,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const SizedProductCard = ({ product, width, height }) => {
+
   return (
     <Link to={`/products/${product._id}`} className='SizedProductCard' style={{ width: width,}}>
       <img src={product.imageURL} alt={product.name} style={

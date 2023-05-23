@@ -1,14 +1,27 @@
 import React from 'react';
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import ShoppingCart from './ShoppingCart/ShoppingCart';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from '../store/features/auth/authSlice';
 
 const Nav = () => {
 
-  // här behöver vi få med en user från App.jsx som antingen är null eller har ett värde istället 
-  // för isLoggedIn, Lämnar så här tills vidare
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  // Showing and hiding shopping cart
+  const [showCart, setShowCart] = useState(false)
+
+  const { totalQuantity } = useSelector(state => state.shoppingCart)
+  const { user } = useSelector(state => state.auth)
+
+  // Logging out user and redirecting to Home page
+  const logout = () => {
+    dispatch(logOut())
+    navigate('/')
+  }
 
   return (
     <div className='Navbar'>
@@ -29,17 +42,29 @@ const Nav = () => {
           </svg>
         </Link>
         <ul className="nav-links">
-          { isLoggedIn && (
-            <>
-              <li><NavLink to='/' className='nav-link'>Home</NavLink></li>
-              <li><NavLink to='/products' className='nav-link'>Products</NavLink></li>
-              <li><NavLink to='/contact' className='nav-link'>Contact</NavLink></li>
-              <li><NavLink to='/' className='nav-link nav-link-grey'><FaSearch /></NavLink></li>
-            </>
-          )
-          }
-          <li><NavLink to='/login' className='nav-link nav-link-grey'>Login</NavLink></li>
-          <li><NavLink to='/' className='nav-link nav-link-grey'><FaShoppingCart /></NavLink></li>
+          <li><NavLink to='/' className='nav-link'>Home</NavLink></li>
+          <li><NavLink to='/products' className='nav-link'>Products</NavLink></li>
+          <li><NavLink to='/contact' className='nav-link'>Contact</NavLink></li>
+          <li><NavLink to='/' className='nav-link nav-link-grey'><FaSearch /></NavLink></li>
+          { user
+            ? (
+              <>
+                <li><NavLink to="/user" className='nav-link nav-link-grey'>User Profile</NavLink></li>
+                <li><button className='nav-link nav-link-grey' onClick={logout}>Logout</button></li>
+              </>
+            )
+            : <li><NavLink to='/login' className='nav-link nav-link-grey'>Login</NavLink></li>
+            
+             }
+          <li>
+            <span className='nav-link nav-link-grey' onClick={() => setShowCart(showCart => !showCart)}>
+              <FaShoppingCart />
+              <span className='cart-quantity'>{totalQuantity}</span>
+            </span>
+            <div className={`shoppingCart-dropdown ${showCart && 'show'}`}>
+              <ShoppingCart />
+            </div>
+          </li>
         </ul>
       </div>
     </div>
