@@ -6,20 +6,35 @@ import useFetch from '../components/useFetch'
 import { useParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../store/features/shoppingCart/shoppingCartSlice'
-
+import { addToCart, removeOne } from '../store/features/shoppingCart/shoppingCartSlice'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 
 const ProductDetails = () => {
+
   const { id } = useParams()
+  
 
   const { data: product } = useFetch('http://localhost:9999/api/products/' + id)
 
   const { data: products } = useFetch('http://localhost:9999/api/products/')
 
-  // console.log(product)
+  const dispatch = useDispatch();
+  const { cart, totalAmount } = useSelector(state => state.shoppingCart)
 
-  const dispatch = useDispatch()
+
+
+
+  const [quantity, setQuantity] = useState(0);
+  
+
+  const addProductToCart = () => {
+    for (let i = 0; i < quantity; i++) {
+      dispatch(addToCart({ ...product, quantity: 1 }));
+    }
+    setQuantity(0); 
+  };
 
 
   const renderStarRating = () => {
@@ -68,16 +83,20 @@ const ProductDetails = () => {
           </div>
 
           <div className='price'>{'$' + product.price}</div>
+         
 
           <form className='quantity-form' onSubmit={e => e.preventDefault()}>
 
             <div>
-              <input type="button" value="-" className='minus' />
-              <input type="number" className='qty-text' value={1} />
-              <input type="button" value="+" className='plus' />
+              <input type="button" value="-" className='plus'  onClick={() => setQuantity(quantity - 1)}/>
+              <input type="number" className='qty-text' value={quantity}  onChange={(e) => setQuantity(parseInt(e.target.value))}/>
+              <input type="button" value="+" className='plus'  onClick={() => setQuantity(quantity + 1)} />
             </div>
-            <button type='submit' className='addTo-cart-btn' onClick={() => {dispatch(addToCart(product))}}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
+            <button type='submit' className='addTo-cart-btn' onClick={addProductToCart}>Add to Cart<MdOutlineAddShoppingCart className='shopping-cart-icon' /></button>
           </form>
+
+
+
 
           <ul className='color-variation'>
             <li ><a href="#"></a><span className='red'></span></li>
@@ -117,19 +136,19 @@ const ProductDetails = () => {
           </div>
 
         </div>
-         
-         <hr />
 
-         <h4 className='rp-h4'>Related Products</h4>
+        <hr />
+
+        <h4 className='rp-h4'>Related Products</h4>
         <section className='recent-products'>
-          
+
           {products && products.slice(0, 4).map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </section>
-       
-        
-       
+
+
+
 
 
 
