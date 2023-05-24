@@ -36,11 +36,12 @@ exports.login = async (req, res) => {
 
   // Checking if input email exists as saved user email
   const user = await User.findOne({ email });
-  if(!user) return res.status(401).json({ message: 'Incorrect credentials' });
+  if(!user) return res.status(401).json({ message: 'Incorrect credentials' })
+  
 
   // Comparing entered password with decrypted saved password
   const result = await bcrypt.compare(password, user.passwordHash);
-  if(!result) return res.status(401).json({ message: 'Incorrect credentials' });
+  if(!result) return res.status(401).json({ message: 'Incorrect credentials' })
 
   // Generating token
   res.status(200).json(generateToken(user))
