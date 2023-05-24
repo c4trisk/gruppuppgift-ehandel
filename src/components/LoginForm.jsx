@@ -3,6 +3,7 @@ import FormInput from './FormInput'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { validateLogin } from '../helpers/validateLogin'
+import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../store/features/auth/authSlice'
 // import { Link } from 'react-router-dom'
 
@@ -10,6 +11,7 @@ const LoginForm = () => {
   
   const [errors, setErrors] = useState({})
 
+  const navigate = useNavigate();
     const dispatch = useDispatch()
 
     const [formData, setFormData,] = useState({
@@ -37,6 +39,7 @@ const LoginForm = () => {
       
       // validate()
       dispatch(loginUser(formData))
+      // navigate
     }
   
   

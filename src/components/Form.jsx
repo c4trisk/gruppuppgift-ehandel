@@ -1,13 +1,14 @@
-// import React from 'react'
-// import FormInput from './FormInput'
-// import { useState } from 'react'
+import React from 'react'
+import FormInput from './FormInput'
+import { useState } from 'react'
 // import { useDispatch } from 'react-redux'
-// import { loginUser } from '../store/features/auth/authSlice'
-// // import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import { loginUser } from '../store/features/auth/authSlice'
+// import { Link } from 'react-router-dom'
 
 // const Form = () => {
 
-//   const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
 //   const [formData, setFormData] = useState({
 //     email: '',
@@ -27,8 +28,8 @@
 //   const handleSubmit = e => {
 //     e.preventDefault()
 
-//     dispatch(loginUser(formData))
-//   }
+  //   dispatch(loginUser(formData))
+  // }
 
 
 //   return (
