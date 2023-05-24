@@ -37,11 +37,12 @@ const RegForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
 
-    if(!validateReg(formData, setErrors)){
-      return
-    }
+    // if(!validateReg(formData, setErrors)){
+    //   return
+    // }
 
     dispatch(registerUser(formData))
+    navigate("/user")
   }
 
   return (
