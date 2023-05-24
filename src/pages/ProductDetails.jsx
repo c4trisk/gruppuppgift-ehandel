@@ -21,10 +21,6 @@ const ProductDetails = () => {
   const { data: products } = useFetch('http://localhost:9999/api/products/')
 
   const dispatch = useDispatch();
-  const { cart, totalAmount } = useSelector(state => state.shoppingCart)
-
-
-
 
   const [quantity, setQuantity] = useState(0);
   
@@ -79,7 +75,7 @@ const ProductDetails = () => {
 
           <div className='star-rating'>
             {renderStarRating()}
-            <span className='rating-text'>({product.review} Reviews)</span>
+            <span className='rating-text'>({product.review ? '1 Review' : 'No Reviews'})</span>
           </div>
 
           <div className='price'>{'$' + product.price}</div>
@@ -118,7 +114,7 @@ const ProductDetails = () => {
         <ul className='nav-tabs'>
           <li className='nav-item'><a href="#" className='nav-link'>DESCRIPTION</a></li>
           <li className='nav-item'><a href="#" className='nav-link'>ADDITIONAL INFO</a></li>
-          <li className='nav-item'><a href="#" className='nav-link'>REVIEWS(0)</a></li>
+          <li className='nav-item'><a href="#" className='nav-link'>REVIEWS ({product.review ? '1 Review' : 'No Reviews'})</a></li>
           <li className='nav-item'><a href="#" className='nav-link'>SHIPPING & DELIVERY</a></li>
         </ul>
 
