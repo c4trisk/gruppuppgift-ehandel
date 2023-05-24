@@ -11,7 +11,7 @@ const LoginForm = () => {
   
   const [errors, setErrors] = useState({})
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useDispatch()
 
     const [formData, setFormData,] = useState({
@@ -33,13 +33,12 @@ const LoginForm = () => {
     const handleSubmit = e => {
       e.preventDefault()
 
-      if(!validateLogin(formData, setErrors)){
-        return
-      }
+      // if(!validateLogin(formData, setErrors)){
+      //   return
+      // }
       
-      // validate()
       dispatch(loginUser(formData))
-      // navigate
+      navigate("/user")
     }
   
   
