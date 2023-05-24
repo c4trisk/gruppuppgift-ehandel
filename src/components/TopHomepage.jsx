@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import SizedProductCard from './SizedProductCard'
 import useFetch from './useFetch'
 
-const TopHomepage = () => {
+const TopHomepage = ({ products }) => {
 
-  const { data: product, isLoading, error } = useFetch('http://localhost:9999/api/products')
   const [firstProduct, setFirstProduct] = useState(0)
   const [productCounter, setProductCounter] = useState(6)
 
@@ -31,7 +30,7 @@ const TopHomepage = () => {
     <div className='TopHomepage'>
         <h2 className='headline'>Top selling products in this week</h2>
       <div className="container">
-        {product && product.slice(firstProduct, productCounter).map((product) => (
+        {products && products.slice(firstProduct, productCounter).map((product) => (
               <SizedProductCard key={product._id} product={product} width={'270px'} height={'295px'} />
             ))}
       </div>
