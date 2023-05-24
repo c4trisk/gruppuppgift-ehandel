@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-const FormInput = ({ label, ...rest}) => {
+
+const FormInput = ({ label, errorMsg, ...rest}) => {
   return (
     <div className="form-group">
     <label className='form-label reg-label' htmlFor={rest.id}>{ label }</label>
     <input className='form-control reg-control' {...rest}/>
-    <p className='error'>error message</p>
+    { errorMsg && <p className='error'>{ errorMsg }</p>}
     </div>
   )
 }

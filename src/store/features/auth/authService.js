@@ -11,6 +11,7 @@ const register = async (formData) => {
     company: formData.company,
     email: formData.email,
     password: formData.password,
+    confirmPswrd: formData.confirmPswrd,
     profileImg: formData.profileImg,
   }
 

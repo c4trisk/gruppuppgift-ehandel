@@ -760,9 +760,19 @@ margin-top: 30px;
     background-color: #f8f8f8;
     border: 1px solid #b4b4b4;
     border-radius: .6rem;
-    width: 800px;
-    padding: 2.5rem;
-    margin: 40px 0px 90px 0px;
+    width: 1000px;
+    padding: 2rem;
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+
+.login-link{
+    padding-bottom: 2em;
+}
+
+.password-link{
+    margin: 0em 0em 2em 5em;
+    /* margin: 40px 0px 90px 0px; */
 }
 
 .form-group {
@@ -795,7 +805,7 @@ margin-top: 30px;
 
 .checkbox-login{
     /* display: inline; */
-    margin: 0em 1.9em 2em 0.4em;
+    margin: 0em 1.9em 2em 5em;
 }
 .checkbox-label {
     margin-left: .7em;
@@ -811,6 +821,7 @@ margin-top: 30px;
 
 .login-btn {
     padding: 1em 3em;
+    margin-left: 5em;
     font-size: .9rem;
     text-transform: uppercase;
     text-decoration: none;
@@ -836,6 +847,8 @@ margin-top: 30px;
     border: 1px solid #b4b4b4;
     border-radius: .6rem;
     width: 800px;
+    border-radius: 1rem;
+    width: 1000px;
     padding: 2.5rem;
 }
 
@@ -879,6 +892,7 @@ margin-top: 30px;
 }
 #contact-checkbox{
     margin-bottom: 25px;
+    margin-left: 75px;
 }
 
 
@@ -886,6 +900,7 @@ margin-top: 30px;
 display: flex;
 flex-direction: column;
 margin-bottom: 20px;
+margin-left: 80px;
 }
 .contact-textarea label{
 margin-bottom: 15px;
@@ -902,12 +917,12 @@ margin-bottom: 15px;
 #confirm-pswrd,
 #profile-img,
 #street{
-    width: 42em;
+    width: 47em;
     /* padding: 0.8em 15rem; */
 }
 
 #reg-checkbox{
-    margin: 0em 2em 2em 1em;
+    margin: 0em 1em 2em 6em;
 }
 
 
