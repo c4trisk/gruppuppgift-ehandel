@@ -3,6 +3,7 @@ import heroBanner from '../assets/Placeholders/1920x300.svg'
 import FormInput from '../components/FormInput'
 import Map from '../components/Map'
 
+
 const Contact = () => {
   return (
     <div className='ContactContainer'>
@@ -40,6 +41,8 @@ const Contact = () => {
 
         <button className='login-btn'>Submit</button>
       </form>
+
+    
     </div>
     </div>
     <Map/>
