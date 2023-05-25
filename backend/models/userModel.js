@@ -1,6 +1,30 @@
 const User = require('../schemas/userSchema');
+const Admin = require('../schemas/adminSchema')
 const bcrypt = require('bcryptjs');
 const { generateToken } = require('../authentication/auth');
+
+
+exports.addAdmin = async (req, res) => {
+  try {
+    
+    const { adminId } = req.body
+
+    if(!adminId) res.status(400).json({ message: 'You need to enter admin ID' })
+
+    const admin = await Admin.create({ adminId })
+
+    if(!admin) {
+      return res.status(500).json({ message: 'Something went wrong' })
+    }
+
+    res.status(201).json({ message: 'Admin added, you need to login again for it to work' })
+
+  } catch (err) {
+      if(err.code == 11000) {
+        return res.status(400).json({ message: 'this admin already exists' })
+      }
+  }
+}
 
 
 // Add new user

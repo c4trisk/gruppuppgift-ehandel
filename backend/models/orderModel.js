@@ -4,39 +4,39 @@ const Order = require('../schemas/orderSchema');
 
 exports.addOrder = async (req, res) => {
   
-  const { product, quantity } = req.body;
-  if(!product || !quantity) res.status(400).json({ message: 'You need to enter product and quantity' })
+  const { orderRow } = req.body;
+  if(!orderRow) res.status(400).json({ message: 'You need to enter products and quantity to your cart' })
+
 
   // Creating new order with the logged in user's id as customerId
   const order = await Order.create({
     customerId: req.userId,
+    orderRow
   })
 
   if(!order) res.status(500).json({ message: 'Something went wrong when creating order' })
 
   // Adding entered product and quantity as a new object in orderRow array
-  order.orderRow.push({ product, quantity })
-  await order.save()
   res.status(201).json(order)
 }
 
 // Add new order rows to existing order
 
-exports.addToExistingOrder = async (req, res) => {
+// exports.addToExistingOrder = async (req, res) => {
   
-  const { product, quantity } = req.body
-  if(!product || !quantity) res.status(400).json({ message: 'You need to enter product and quantity' })
+//   const { product, quantity } = req.body
+//   if(!product || !quantity) res.status(400).json({ message: 'You need to enter product and quantity' })
   
-  const order = await Order.findById(req.params.id)
-  if(!order) res.status(404).json({ message: 'Could not find order' })
+//   const order = await Order.findById(req.params.id)
+//   if(!order) res.status(404).json({ message: 'Could not find order' })
   
-  // Adding entered product and quantity as a new object in orderRow array
-  order.orderRow.push({ product, quantity })
-  await order.save()
+//   // Adding entered product and quantity as a new object in orderRow array
+//   order.orderRow.push({ product, quantity })
+//   await order.save()
 
-  res.status(201).json(order)
+//   res.status(201).json(order)
 
-}
+// }
 
 // Get all orders
 

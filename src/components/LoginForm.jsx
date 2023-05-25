@@ -1,7 +1,7 @@
 import React from 'react'
 import FormInput from './FormInput'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { validateLogin } from '../helpers/validateLogin'
 import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../store/features/auth/authSlice'
@@ -10,7 +10,7 @@ import { loginUser } from '../store/features/auth/authSlice'
 const LoginForm = () => {
   
   const [errors, setErrors] = useState({})
-
+  const { user } = useSelector(state => state.auth)
     const navigate = useNavigate();
     const dispatch = useDispatch()
 
@@ -38,7 +38,9 @@ const LoginForm = () => {
       // }
       
       dispatch(loginUser(formData))
-      navigate("/user")
+      if(user != null){
+        navigate("/user")
+      }
     }
   
   
