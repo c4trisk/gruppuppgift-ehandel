@@ -5,7 +5,7 @@ const Order = require('../schemas/orderSchema');
 exports.addOrder = async (req, res) => {
   
   const { orderRow } = req.body;
-  if(!orderRow) res.status(400).json({ message: 'You need to enter products and quantity to your cart' })
+  if(!orderRow) return res.status(400).json({ message: 'You need to enter products and quantity to your cart' })
 
 
   // Creating new order with the logged in user's id as customerId
@@ -14,7 +14,7 @@ exports.addOrder = async (req, res) => {
     orderRow
   })
 
-  if(!order) res.status(500).json({ message: 'Something went wrong when creating order' })
+  if(!order) return res.status(500).json({ message: 'Something went wrong when creating order' })
 
   // Adding entered product and quantity as a new object in orderRow array
   res.status(201).json(order)
