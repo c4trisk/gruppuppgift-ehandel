@@ -1,3 +1,5 @@
+const Admin = require('../schemas/adminSchema')
+
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -20,4 +22,18 @@ exports.verifyToken = (req, res, next) => {
   } catch {
     res.status(401).json({ message: 'Access restricted. You need to login.' })
   }
+}
+
+exports.checkAdmin = async (req, res, next) => {
+
+  console.log(req.userData)
+  const admin = await Admin.findOne({ adminId: req.userId })
+
+  if(!admin) {
+    return res.status(401).json({
+      message: 'you need to be admin to be able to do this'
+    })
+  }
+
+  next()
 }

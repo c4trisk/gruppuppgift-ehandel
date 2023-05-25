@@ -3,12 +3,14 @@ import FormInput from './FormInput'
 import { useDispatch } from 'react-redux'
 import { validateReg } from '../helpers/validateReg'
 import { registerUser } from '../store/features/auth/authSlice'
+import { useNavigate } from 'react-router-dom'
 
 const RegForm = () => {
 
   const [errors, setErrors] = useState({})
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -42,7 +44,7 @@ const RegForm = () => {
     // }
 
     dispatch(registerUser(formData))
-    navigate("/user")
+    navigate("/")
   }
 
   return (
