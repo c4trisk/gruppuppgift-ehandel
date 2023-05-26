@@ -945,6 +945,17 @@ margin-bottom: 15px;
     margin-bottom: 2rem;
 }
 
+.UserProfile p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.UserProfile .link {
+    color: var(--clr-red);
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .UserProfile .current-order {
     margin-bottom: 3rem;
 }

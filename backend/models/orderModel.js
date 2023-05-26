@@ -4,13 +4,13 @@ const Order = require('../schemas/orderSchema');
 
 exports.addOrder = async (req, res) => {
   
-  const { orderRow } = req.body;
+  const { customerId, orderRow } = req.body;
   if(!orderRow) return res.status(400).json({ message: 'You need to enter products and quantity to your cart' })
 
 
   // Creating new order with the logged in user's id as customerId
   const order = await Order.create({
-    customerId: req.userId,
+    customerId,
     orderRow
   })
 
@@ -75,7 +75,7 @@ exports.getOrderById = async (req, res) => {
 
 // Get all orders made by specific user
 
-exports.getOrderByUser = async (req, res) => {
+exports.getOrdersByUser = async (req, res) => {
 
   const orders = await Order.find({ customerId: req.params.id })
 
