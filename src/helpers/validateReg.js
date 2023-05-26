@@ -37,6 +37,20 @@ export const validateReg = ( formData, setErrors ) => {
     err.city = 'Your city must be atleast 3 chars long'
   }
 
+  //   // mobile
+  //   if(formData.street.trim() === '') {
+  //     // err.mobile = 'You need to enter a street'
+  //   } else if(formData.mobile.length < 3) {
+  //     err.street = 'Your street is invalid'
+  //   }
+
+  //     // company
+  //  if(formData.company.trim() === '') {
+  //   // err.street = 'You need to enter a street'
+  // } else if(formData.company.length < 3) {
+  //   // err.street = 'Your street is invalid'
+  // }
+
   //email
     const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if(formData.email.trim() === '') {
@@ -64,6 +78,8 @@ export const validateReg = ( formData, setErrors ) => {
 
     console.log(err)
     setErrors(err)
+
+  return Object.keys(err).length <= 0
 
 }
 

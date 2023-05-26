@@ -44,12 +44,12 @@ const Nav = () => {
         <ul className="nav-links">
           <li><NavLink to='/' className='nav-link'>Home</NavLink></li>
           <li><NavLink to='/products' className='nav-link'>Products</NavLink></li>
-          <li><NavLink to='/orders' className='nav-link'>My orders</NavLink></li>
           <li><NavLink to='/contact' className='nav-link'>Contact</NavLink></li>
           <li><NavLink to='/' className='nav-link nav-link-grey'><FaSearch /></NavLink></li>
           { user
             ? (
               <>
+                <li><NavLink to='/orders' className='nav-link'>My orders</NavLink></li>
                 <li><NavLink to="/user" className='nav-link nav-link-grey'>User Profile</NavLink></li>
                 <li><button className='nav-link nav-link-grey' onClick={logout}>Logout</button></li>
               </>
