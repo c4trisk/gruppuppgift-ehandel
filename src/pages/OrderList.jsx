@@ -21,7 +21,7 @@ const OrderList = () => {
                 <div key={order._id}>
                     {order.orderRow.map((row) => (
                         <div key={order._id}>
-                            <img src={row.product.imageURL} alt={row.product.name} />
+                            <img src={row.product.imageURL} alt={row.product.name} className='orderRowImg'/>
                             <p>Product: {row.product.name}</p>
                             <p>Quantity: {row.quantity}</p>
                         </div>
