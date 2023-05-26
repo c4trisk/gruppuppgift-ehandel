@@ -42,7 +42,7 @@ exports.addOrder = async (req, res) => {
 
 exports.getOrders = async (req, res) => {
 
-  const orders = await Order.find()
+  const orders = await Order.find().populate({ path: 'orderRow.product', select: 'name price imageURL' })
 
   if(!orders) res.status(500).json({ message: 'Something went wrong when getting orders' })
 
