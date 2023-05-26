@@ -9,7 +9,7 @@ const UserProfile = () => {
   const { cart, totalAmount } = useSelector(state => state.shoppingCart)
   const { user } = useSelector(state => state.auth)
   const dispatch = useDispatch()
-
+  
   return (
     <div className='UserProfile'>
       <h1>Welcome back!</h1>

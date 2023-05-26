@@ -1017,3 +1017,10 @@ margin-bottom: 15px;
     align-items: center;
     padding-bottom: 3rem;
   }
+
+  /* ORDER */
+
+  .orderRowImg{
+    max-width: 150px;
+  }
+  
