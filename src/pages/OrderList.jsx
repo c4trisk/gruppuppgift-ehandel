@@ -16,11 +16,12 @@ const OrderList = () => {
 
     return (
       <div>
-            <h1>Orders</h1>
+            <h1>Previous orders</h1>
             {orders && orders.map((order) => (
                 <div key={order._id}>
                     {order.orderRow.map((row) => (
-                        <div key={order._id}>
+                        <div key={row._id}>
+                            <p className='ordernumber'>Ordernumber: {order._id}</p>
                             <img src={row.product.imageURL} alt={row.product.name} className='orderRowImg'/>
                             <p>Product: {row.product.name}</p>
                             <p>Quantity: {row.quantity}</p>
