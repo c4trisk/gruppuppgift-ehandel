@@ -33,9 +33,9 @@ const LoginForm = () => {
     const handleSubmit = e => {
       e.preventDefault()
 
-      // if(!validateLogin(formData, setErrors)){
-      //   return
-      // }
+      if(!validateLogin(formData, setErrors)){
+        return
+      }
       
       dispatch(loginUser(formData))
       if(user != null){
