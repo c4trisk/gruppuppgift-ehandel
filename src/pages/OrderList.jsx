@@ -20,7 +20,8 @@ const OrderList = () => {
             {orders && orders.map((order) => (
                 <div key={order._id}>
                     {order.orderRow.map((row) => (
-                        <div key={row.product._id}>
+                        <div key={row._id}>
+                            <img src={row.product.imageURL} alt={row.product.name} className='orderRowImg'/>
                             <p>Product: {row.product.name}</p>
                             <p>Quantity: {row.quantity}</p>
                         </div>

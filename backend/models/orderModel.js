@@ -40,6 +40,17 @@ exports.addOrder = async (req, res) => {
 
 // Get all orders
 
+
+
+// exports.getOrders = async (req, res) => {
+
+//   const orders = await Order.find()
+
+//   if(!orders) res.status(500).json({ message: 'Something went wrong when getting orders' })
+
+//   res.status(200).json(orders)
+// }
+
 exports.getOrders = async (req, res) => {
 
   const orders = await Order.find().populate({ path: 'orderRow.product', select: 'name price imageURL' })
@@ -48,6 +59,7 @@ exports.getOrders = async (req, res) => {
 
   res.status(200).json(orders)
 }
+
 
 // Get a specific order by id
 
