@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FormInput from './FormInput'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { validateReg } from '../helpers/validateReg'
 import { registerUser } from '../store/features/auth/authSlice'
 import { useNavigate } from 'react-router-dom'
@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom'
 const RegForm = () => {
 
   const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+  const { user } = useSelector(state => state.auth)
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -36,16 +38,22 @@ const RegForm = () => {
     })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
     if(!validateReg(formData, setErrors)){
       return
     }
 
-    dispatch(registerUser(formData))
-    navigate("/")
+    await dispatch(registerUser(formData))
+    setSubmitted(true)
   }
+
+  useEffect(() => {
+    if(user !== null){
+      navigate("/")
+    } 
+  }, [ submitted, user ])
 
   return (
     <form noValidate onSubmit={handleSubmit}>

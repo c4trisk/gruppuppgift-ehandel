@@ -38,7 +38,6 @@ export const validateReg = ( formData, setErrors ) => {
   }
 
 
-
   //email
     const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     if(formData.email.trim() === '') {
@@ -70,6 +69,8 @@ export const validateReg = ( formData, setErrors ) => {
     console.log(err)
     setErrors(err)
     return Object.keys(err).length <= 0
+
+  return Object.keys(err).length <= 0
 
 }
 
