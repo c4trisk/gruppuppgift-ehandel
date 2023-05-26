@@ -23,7 +23,7 @@ const Checkout = () => {
   const placeOrder = () =>{
     const orderData ={
       orderRow :cart.map(item =>({
-        product: item.product._id,
+        product: item.product,
         quantity: item.quantity
       }))
     }
