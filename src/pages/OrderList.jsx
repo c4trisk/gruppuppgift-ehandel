@@ -9,15 +9,17 @@ import { clearCart } from '../store/features/shoppingCart/shoppingCartSlice'
 const OrderList = () => {
 
     const dispatch = useDispatch();
-    const orders = useSelector((state) => state.orders.orders);
-    const products = useSelector((state) => state.products.products);
+    const { products } = useSelector((state) => state.products.products);
+    const { orders } = useSelector((state) => state.orders.orders);
     const { cart, totalAmount } = useSelector(state => state.shoppingCart)
     const { user } = useSelector(state => state.auth)
 
     useEffect(() => {
-        dispatch(getAllOrders());
+        dispatch(getAllOrders(user._id));
     }, []);
 
+
+    // console.log(orders[0])
 
     return (
       <div>
