@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux'
 import CartItem from '../components/ShoppingCart/CartItem'
 import { useDispatch } from 'react-redux';
 import { addOrder } from '../store/features/orders/orderSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { cart, totalAmount } = useSelector(state => state.shoppingCart)
 
@@ -26,6 +28,8 @@ const Checkout = () => {
       }))
     }
     dispatch(addOrder(orderData));
+    navigate('/')
+
   }
 
   return (
