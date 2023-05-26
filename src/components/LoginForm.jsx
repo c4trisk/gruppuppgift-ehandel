@@ -33,12 +33,12 @@ const LoginForm = () => {
     const handleSubmit = e => {
       e.preventDefault()
 
-      // if(!validateLogin(formData, setErrors)){
-      //   return
-      // }
+      if(!validateLogin(formData, setErrors)){
+        
+      }
       
       dispatch(loginUser(formData))
-      if(user != null){
+      if(user && user != null){
         navigate("/user")
       }
     }

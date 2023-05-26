@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllOrders } from '../store/features/orders/orderSlice';
 import CartItem from '../components/ShoppingCart/CartItem'
-import { Link } from 'react-router-dom'
-import { clearCart } from '../store/features/shoppingCart/shoppingCartSlice'
 
 
 const OrderList = () => {
@@ -33,7 +31,7 @@ const OrderList = () => {
       </div>
             <h1>Previous orders</h1>
             {orders && orders.map((order) => (
-                <div key={order._id}>
+                <div className='prevOrderCard' key={order._id}>
                     {order.orderRow.map((row) => (
                         <div key={row._id}>
                             <p className='ordernumber'>Ordernumber: {order._id}</p>

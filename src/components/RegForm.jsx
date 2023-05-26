@@ -16,7 +16,7 @@ const RegForm = () => {
     firstName: '',
     lastName: '',
     street: '',
-    postalcode: '',
+    postalCode: '',
     city: '',
     mobile: '',
     company: '',

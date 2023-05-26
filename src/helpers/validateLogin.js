@@ -26,5 +26,5 @@ export const validateLogin = ( formData, setErrors ) => {
 
   console.log(err)  
   setErrors(err)
-
+  return Object.keys(err).length <= 0
 }
