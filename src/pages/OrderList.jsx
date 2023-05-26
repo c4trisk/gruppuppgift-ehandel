@@ -23,10 +23,16 @@ const OrderList = () => {
                         <div key={row.product}>
                             <p>Product: {row.product}</p>
                             <p>Quantity: {row.quantity}</p>
+              
+                       
                         </div>
+                          
                     ))}
                 </div>
+                 
             ))}
+     
+
         </div>
     );
 
