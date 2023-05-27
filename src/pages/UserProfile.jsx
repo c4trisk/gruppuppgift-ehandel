@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CartItem from '../components/ShoppingCart/CartItem'
 import { Link, useNavigate } from 'react-router-dom'
@@ -12,10 +12,18 @@ const UserProfile = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  // If user logs out using "Sign in as another user" - redirects to login
   const logoutAndNavigate = () => {
     dispatch(logOut())
     navigate('/login')
   }
+
+  // If user logs out using logout-button in navbar while on this page - redirects to login
+  useEffect(() => {
+    if(!user) {
+        navigate('/login')
+    }
+  }, [user])
   
   return (
     <div className='UserProfile'>

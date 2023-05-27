@@ -2,20 +2,29 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllOrders } from '../store/features/orders/orderSlice';
 import CartItem from '../components/ShoppingCart/CartItem'
+import { useNavigate } from 'react-router-dom';
 
 
 const OrderList = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const { products } = useSelector(state => state.products);
     const { orders } = useSelector(state => state.orders);
     const { cart, totalAmount } = useSelector(state => state.shoppingCart)
     const { user } = useSelector(state => state.auth)
 
+    // fetching all orders made by this user
     useEffect(() => {
         dispatch(getAllOrders(user._id));
     }, []);
 
+    // If user logs out while on this page - redirects to login
+    useEffect(() => {
+        if(!user) {
+            navigate('/login')
+        }
+    }, [user])
 
     // console.log(orders[0])
     console.log(orders.orderRow)

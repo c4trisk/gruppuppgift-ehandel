@@ -51,7 +51,7 @@ const RegForm = () => {
 
   useEffect(() => {
     if(user !== null){
-      navigate("/")
+      navigate("/user")
     } 
   }, [ submitted, user ])
 
