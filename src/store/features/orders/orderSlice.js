@@ -7,9 +7,9 @@ const initialState = {
     loading: false
   }
 
-  export const getAllOrders = createAsyncThunk('orders/getAll', async (_, thunkAPI) => {
+  export const getAllOrders = createAsyncThunk('orders/getAll', async (userId, thunkAPI) => {
     try {
-      return await orderService.getOrderAsync()
+      return await orderService.getOrderAsync(userId)
       return 
       } catch (err) {
       return thunkAPI.rejectWithValue(err.message)
