@@ -7,7 +7,7 @@ const Map = () => {
      width="800" 
      height="500" 
      src="https://www.bing.com/maps/embed?h=500&w=800&cp=59.07424273421398~11.245424597385636&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" 
-     scrolling="no">
+     >
      </iframe>
     
      </div>

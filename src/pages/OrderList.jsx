@@ -7,8 +7,8 @@ import CartItem from '../components/ShoppingCart/CartItem'
 const OrderList = () => {
 
     const dispatch = useDispatch();
-    const { products } = useSelector((state) => state.products.products);
-    const { orders } = useSelector((state) => state.orders.orders);
+    const { products } = useSelector(state => state.products);
+    const { orders } = useSelector(state => state.orders);
     const { cart, totalAmount } = useSelector(state => state.shoppingCart)
     const { user } = useSelector(state => state.auth)
 
@@ -18,6 +18,7 @@ const OrderList = () => {
 
 
     // console.log(orders[0])
+    console.log(orders.orderRow)
 
     return (
       <div className='allOrders'>
