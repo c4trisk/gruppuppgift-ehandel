@@ -77,7 +77,7 @@ exports.getOrderById = async (req, res) => {
 
 exports.getOrdersByUser = async (req, res) => {
 
-  const orders = await Order.find({ customerId: req.params.id })
+  const orders = await Order.find({ customerId: req.params.id }).populate({ path: 'orderRow.product', select: 'name price imageURL' })
 
   if(!orders) res.status(404).json({ message: 'Could not find orders' })
 
