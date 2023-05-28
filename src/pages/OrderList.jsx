@@ -53,15 +53,8 @@ const OrderList = () => {
                         <div key={row._id} className='row-wrapper'>
                             
                             <img src={row.product.imageURL} alt={row.product.name} className='orderRowImg'/>
-<<<<<<< HEAD
-                            <p>Product: {row.product.name}</p>
-                            <p>Quantity: {row.quantity}</p>
-              
-                       
-=======
                             <p><b>Product:</b> {row.product.name}</p>
                             <p><b>Quantity:</b> {row.quantity}</p>
->>>>>>> 58f381501e6248912e17dbcfa2cde7ae9c517f3a
                         </div>
                           
                     ))}
