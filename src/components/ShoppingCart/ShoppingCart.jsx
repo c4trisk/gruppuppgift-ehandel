@@ -9,6 +9,7 @@ const ShoppingCart = () => {
   const { cart, totalAmount } = useSelector(state => state.shoppingCart)
   const dispatch = useDispatch()
 
+
   return (
     <div className='ShoppingCart'>
       {
@@ -31,3 +32,6 @@ const ShoppingCart = () => {
 }
 
 export default ShoppingCart
+
+
+
