@@ -9,7 +9,6 @@ import { logOut } from '../store/features/auth/authSlice';
 const Nav = () => {
 
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   // Showing and hiding shopping cart
   const [showCart, setShowCart] = useState(false)
@@ -17,11 +16,6 @@ const Nav = () => {
   const { totalQuantity } = useSelector(state => state.shoppingCart)
   const { user } = useSelector(state => state.auth)
 
-  // Logging out user and redirecting to Home page
-  const logout = () => {
-    dispatch(logOut())
-    navigate('/')
-  }
 
   return (
     <div className='Navbar'>
@@ -44,14 +38,14 @@ const Nav = () => {
         <ul className="nav-links">
           <li><NavLink to='/' className='nav-link'>Home</NavLink></li>
           <li><NavLink to='/products' className='nav-link'>Products</NavLink></li>
-          <li><NavLink to='/orders' className='nav-link'>My orders</NavLink></li>
           <li><NavLink to='/contact' className='nav-link'>Contact</NavLink></li>
           <li><NavLink to='/' className='nav-link nav-link-grey'><FaSearch /></NavLink></li>
           { user
             ? (
               <>
+                <li><NavLink to='/orders' className='nav-link'>My orders</NavLink></li>
                 <li><NavLink to="/user" className='nav-link nav-link-grey'>User Profile</NavLink></li>
-                <li><button className='nav-link nav-link-grey' onClick={logout}>Logout</button></li>
+                <li><button className='nav-link nav-link-grey' onClick={() => dispatch(logOut())}>Logout</button></li>
               </>
             )
             : <li><NavLink to='/login' className='nav-link nav-link-grey'>Login</NavLink></li>

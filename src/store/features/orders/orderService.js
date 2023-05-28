@@ -1,5 +1,5 @@
-const getOrderAsync = async () => {
-    const res = await fetch('http://localhost:9999/api/orders/')
+const getOrderAsync = async (userId) => {
+    const res = await fetch('http://localhost:9999/api/orders/user/' + userId)
     if(!res.ok) throw new Error('Something went wrong')
     return res.json()
 }
