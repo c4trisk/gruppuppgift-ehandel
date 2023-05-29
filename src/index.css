@@ -880,10 +880,10 @@ margin-top: 30px;
 #firstName,
 #lastName,
 #company,
-#postalcode,
+#postalCode,
 #city,
 #mobile{
-    width: 20em;
+    width: 22.5em;
     margin-right: 2.2em
 }
 
@@ -914,8 +914,8 @@ margin-bottom: 15px;
 
 #email,
 #password,
-#confirm-pswrd,
-#profile-img,
+#confirmPswrd,
+#profileImg,
 #street{
     width: 47em;
     /* padding: 0.8em 15rem; */
