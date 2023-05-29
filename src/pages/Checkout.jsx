@@ -15,12 +15,12 @@ const Checkout = () => {
   const { user } = useSelector(state => state.auth)
 
 
-  const placeOrder = () =>{
-    
-    
-    const orderData ={
+  const placeOrder = () => {
+
+
+    const orderData = {
       customerId: user._id,
-      orderRow: cart.map(item =>({
+      orderRow: cart.map(item => ({
         product: item.product,
         quantity: item.quantity
       }))
@@ -41,7 +41,6 @@ const Checkout = () => {
       }
       <div className='purchase'>
         <h2>Total Amount: ${totalAmount}</h2>
-        {/* <button className="cart-btn">Complete Purchase</button> */}
 
         <button className="cart-btn" onClick={placeOrder}>
           Complete Purchase

@@ -21,16 +21,6 @@ const SaleHomepage = ({ products }) => {
           product2 && <SizedProductCard key={product2._id} product={product2} width={'369px'} height={'310px'} />
         }
 
-        {/* {
-          _products &&    (
-            <>
-              <SizedProductCard key={_products[0]._id} product={_products[0]} width={'369px'} height={'310px'} />
-              <TextCard />
-              <SizedProductCard key={_products[1]._id} product={_products[1]} width={'369px'} height={'310px'} />
-            </>    
-          )
-        } */}
-
       </div>
     </div>
   )
