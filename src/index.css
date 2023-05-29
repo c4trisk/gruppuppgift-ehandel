@@ -887,7 +887,7 @@ margin-top: 30px;
     margin-right: 2.2em
 }
 
-#textarea{
+.contact-textarea{
     width: 50em;
 }
 #contact-checkbox{
@@ -900,7 +900,6 @@ margin-top: 30px;
 display: flex;
 flex-direction: column;
 margin-bottom: 20px;
-margin-left: 80px;
 }
 .contact-textarea label{
 margin-bottom: 15px;
