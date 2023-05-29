@@ -16,7 +16,10 @@ const OrderList = () => {
 
     // fetching all orders made by this user
     useEffect(() => {
-        dispatch(getAllOrders(user._id));
+        if (user){
+            dispatch(getAllOrders(user._id));
+        }
+      
     }, []);
 
     // If user logs out while on this page - redirects to login
@@ -26,8 +29,7 @@ const OrderList = () => {
         }
     }, [user])
 
-    // console.log(orders[0])
-    console.log(orders.orderRow)
+    // console.log(orders.orderRow)
 
     return (
       <div className='allOrders'>

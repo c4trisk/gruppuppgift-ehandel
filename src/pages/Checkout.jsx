@@ -14,13 +14,6 @@ const Checkout = () => {
   const { cart, totalAmount } = useSelector(state => state.shoppingCart)
   const { user } = useSelector(state => state.auth)
 
-  // const placeOrder = () => {
-  //   const order = cart.map(item => {
-  //     return { id: item.product._id, quantity: item.quantity }
-  //   })
-
-  //   dispatch(addOrder(order));
-  // }
 
   const placeOrder = () =>{
     

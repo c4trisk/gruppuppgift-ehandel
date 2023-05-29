@@ -24,6 +24,10 @@ const UserProfile = () => {
         navigate('/login')
     }
   }, [user])
+
+  if (!user) {
+    return null; // Or you can render a loading spinner or a message indicating that the user is not available
+  }
   
   return (
     <div className='UserProfile'>
