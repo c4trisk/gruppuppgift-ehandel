@@ -29,7 +29,7 @@ const Checkout = () => {
 
     dispatch(addOrder(orderData));
     dispatch(clearCart())
-    navigate('/')
+    navigate('/orders')
 
   }
 
