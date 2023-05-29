@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { addOrder, getOrderById, getOrderByUser, addToExistingOrder, getOrders } = require('../models/orderModel');
+const { addOrder, getOrderById, getOrdersByUser, addToExistingOrder, getOrders } = require('../models/orderModel');
 const { verifyToken, checkAdmin } = require('../authentication/auth')
 
 
@@ -12,8 +12,8 @@ router.post('/', addOrder)
 // Read
 router.get('/', getOrders)
 // router.get('/', verifyToken, checkAdmin, getOrders)
-router.get('/:id', verifyToken, getOrderById)
-router.get('/user/:id', verifyToken, getOrderByUser)
+router.get('/:id', getOrderById)
+router.get('/user/:id', getOrdersByUser)
 
 
 

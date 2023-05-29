@@ -4,6 +4,7 @@ import CartItem from '../components/ShoppingCart/CartItem'
 import { useDispatch } from 'react-redux';
 import { addOrder } from '../store/features/orders/orderSlice';
 import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../store/features/shoppingCart/shoppingCartSlice';
 
 const Checkout = () => {
 
@@ -11,6 +12,7 @@ const Checkout = () => {
   const navigate = useNavigate();
 
   const { cart, totalAmount } = useSelector(state => state.shoppingCart)
+  const { user } = useSelector(state => state.auth)
 
   // const placeOrder = () => {
   //   const order = cart.map(item => {
@@ -21,13 +23,19 @@ const Checkout = () => {
   // }
 
   const placeOrder = () =>{
+    
+    
     const orderData ={
-      orderRow :cart.map(item =>({
+      customerId: user._id,
+      orderRow: cart.map(item =>({
         product: item.product,
         quantity: item.quantity
       }))
     }
+
+
     dispatch(addOrder(orderData));
+    dispatch(clearCart())
     navigate('/')
 
   }
