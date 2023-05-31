@@ -17,9 +17,6 @@ const OrderList = () => {
     }, []);
 
 
-    // console.log(orders[0])
-    console.log(orders.orderRow)
-
     return (
       <div className='allOrders'>
         <div className='curOrders'>
@@ -39,6 +36,7 @@ const OrderList = () => {
             {orders && orders.map((order) => (
                 <div key={order._id} className='order-wrapper'>
                     <p className='ordernumber'><b>Ordernumber:</b> {order._id}</p>
+                    <p>{order.orderStatus}</p>
                     {order.orderRow.map((row) => (
                         
                         <div key={row._id} className='row-wrapper'>
