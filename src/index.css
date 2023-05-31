@@ -880,14 +880,14 @@ margin-top: 30px;
 #firstName,
 #lastName,
 #company,
-#postalcode,
+#postalCode,
 #city,
 #mobile{
-    width: 20em;
+    width: 22.5em;
     margin-right: 2.2em
 }
 
-#textarea{
+.contact-textarea{
     width: 50em;
 }
 #contact-checkbox{
@@ -900,7 +900,6 @@ margin-top: 30px;
 display: flex;
 flex-direction: column;
 margin-bottom: 20px;
-margin-left: 80px;
 }
 .contact-textarea label{
 margin-bottom: 15px;
@@ -914,8 +913,8 @@ margin-bottom: 15px;
 
 #email,
 #password,
-#confirm-pswrd,
-#profile-img,
+#confirmPswrd,
+#profileImg,
 #street{
     width: 47em;
     /* padding: 0.8em 15rem; */

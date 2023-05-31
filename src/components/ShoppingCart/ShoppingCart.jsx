@@ -10,6 +10,7 @@ const ShoppingCart = () => {
   const { user } = useSelector(state => state.auth)
   const dispatch = useDispatch()
 
+
   return (
     <div className='ShoppingCart'>
       {
@@ -25,7 +26,6 @@ const ShoppingCart = () => {
         <div className="buttons">
           <button className='cart-btn clear' onClick={() => dispatch(clearCart())}>Clear Cart</button>
           <Link to={user == null ? `/login` : '/checkout'} className='cart-btn checkout'>To Checkout</Link>
-          {/* <Link to="/checkout" className='cart-btn checkout'>To Checkout</Link> */}
         </div>
       </div>
     </div>
@@ -33,3 +33,6 @@ const ShoppingCart = () => {
 }
 
 export default ShoppingCart
+
+
+

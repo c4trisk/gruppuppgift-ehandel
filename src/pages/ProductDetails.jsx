@@ -22,7 +22,7 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch();
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   
 
   const addProductToCart = () => {
