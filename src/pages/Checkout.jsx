@@ -23,7 +23,8 @@ const Checkout = () => {
       orderRow: cart.map(item => ({
         product: item.product,
         quantity: item.quantity
-      }))
+      })),
+      orderStatus: 'Pending'
     }
 
 

@@ -29,8 +29,6 @@ const OrderList = () => {
         }
     }, [user])
 
-    // console.log(orders.orderRow)
-
     return (
       <div className='allOrders'>
         <div className='curOrders'>
@@ -50,6 +48,7 @@ const OrderList = () => {
             {orders && orders.map((order) => (
                 <div key={order._id} className='order-wrapper'>
                     <p className='ordernumber'><b>Ordernumber:</b> {order._id}</p>
+                    <p>Status: {order.orderStatus}</p>
                     {order.orderRow.map((row) => (
                         
                         <div key={row._id} className='row-wrapper'>
