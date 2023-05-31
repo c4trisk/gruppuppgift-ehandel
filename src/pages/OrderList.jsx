@@ -48,7 +48,7 @@ const OrderList = () => {
             {orders && orders.map((order) => (
                 <div key={order._id} className='order-wrapper'>
                     <p className='ordernumber'><b>Ordernumber:</b> {order._id}</p>
-                    <p>{order.orderStatus}</p>
+                    <p>Status: {order.orderStatus}</p>
                     {order.orderRow.map((row) => (
                         
                         <div key={row._id} className='row-wrapper'>
