@@ -57,3 +57,11 @@ exports.getOrdersByUser = async (req, res) => {
 
   res.status(200).json(orders)
 }
+
+exports.updateStatus = async (req, res) => {
+  const { orderStatus } = req.body
+  const order = await Order.findByIdAndUpdate(req.params.id,{orderStatus},{new: true})
+  if(!order) return res.status(404).json({ message: 'Could not find orders' })
+  res.status(200).json(order)
+
+}
