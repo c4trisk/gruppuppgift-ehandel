@@ -46,7 +46,10 @@ exports.addUser = async (req, res) => {
   if(!user) res.status(500).json({ message: 'Something went wrong when creating new user' });
 
   // Generating token
-  res.status(201).json(generateToken(user))
+  // res.status(201).json(generateToken(user))
+
+    // Returning user object
+    res.status(201).json(user)
 }
 
 
